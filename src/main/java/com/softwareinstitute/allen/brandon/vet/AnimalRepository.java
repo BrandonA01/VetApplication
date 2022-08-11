@@ -1,7 +1,10 @@
 package com.softwareinstitute.allen.brandon.vet;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class AnimalRepository {
@@ -20,7 +23,11 @@ public class AnimalRepository {
         this.animalList.add(new Cat(true, 1, "Tom", "Ginger"));
     }
 
-    public String toString(AnimalRepository repo){
+    public String toStringJSON(AnimalRepository repo){
         return new Gson().toJson(repo.getAll());
     }
+
+    /*public HashMap JSONtoArray(String str) throws JsonProcessingException {
+        return new ObjectMapper().readValue(str, HashMap.class);
+    }*/
 }

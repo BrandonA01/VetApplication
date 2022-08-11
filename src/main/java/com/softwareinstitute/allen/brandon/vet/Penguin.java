@@ -1,5 +1,7 @@
 package com.softwareinstitute.allen.brandon.vet;
 
+import java.io.InputStream;
+
 public final class Penguin extends Bird{
 
     public Penguin(boolean alive, int age, String colour, int hp) {
@@ -15,5 +17,5 @@ public final class Penguin extends Bird{
     @Override
     public String eat() {
         return "Swallows food whole";
-    }//
+    }
 }
