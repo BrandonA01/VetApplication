@@ -17,7 +17,6 @@ public class VetApplication {
 	public @ResponseBody String getAllAnimals() {
 		AnimalRepository repository = new AnimalRepository();
 		repository.add();
-		//return repository.toString(repository);
-		return "customRoute.html";
+		return repository.toString(repository);
 	}
-}//
+}
