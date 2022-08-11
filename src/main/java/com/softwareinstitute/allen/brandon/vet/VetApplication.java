@@ -21,4 +21,4 @@ public class VetApplication {
 		String json = new Gson().toJson(repository.getAll());
 		return json;
 	}
-}//
+}
