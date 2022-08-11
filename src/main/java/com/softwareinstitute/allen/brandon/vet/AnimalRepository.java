@@ -1,14 +1,12 @@
 package com.softwareinstitute.allen.brandon.vet;
 
 import com.google.gson.Gson;
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class AnimalRepository {
 
-    private List<Animal> animalList = new ArrayList<Animal>();
+    private List<Animal> animalList = new ArrayList<>();
 
     public List<Animal> getAll() {
         return animalList;
@@ -23,7 +21,6 @@ public class AnimalRepository {
     }
 
     public String toString(AnimalRepository repo){
-        String json = new Gson().toJson(repo.getAll());
-        return json;
+        return new Gson().toJson(repo.getAll());
     }
 }

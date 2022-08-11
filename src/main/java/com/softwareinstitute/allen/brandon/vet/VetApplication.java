@@ -1,6 +1,5 @@
 package com.softwareinstitute.allen.brandon.vet;
 
-import com.google.gson.Gson;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;

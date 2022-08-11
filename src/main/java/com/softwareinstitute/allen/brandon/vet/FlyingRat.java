@@ -7,8 +7,8 @@ public final class FlyingRat extends Bird implements Flying{
     private static final String FLYING = "Gliding";
     private static final String LANDED = "Landed";
 
-    public FlyingRat(boolean alive, int age, String colour, int HP) {
-        super(alive, age, colour, HP);
+    public FlyingRat(boolean alive, int age, String colour, int hp) {
+        super(alive, age, colour, hp);
     }
     public FlyingRat(boolean alive, int age, String colour) {
         super(alive, age, colour);
@@ -25,8 +25,8 @@ public final class FlyingRat extends Bird implements Flying{
         return pastiesEaten;
     }
 
-    public void setPastiesEaten(int pasties_eaten) {
-        this.pastiesEaten = pasties_eaten;
+    public void setPastiesEaten(int pastiesEaten) {
+        this.pastiesEaten = pastiesEaten;
     }
 
     public String takeOff() {

@@ -8,6 +8,7 @@ class VetApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }
