@@ -33,13 +33,10 @@ public class AnimalRepository {
         return searchanimalList;
     }
 
-    public String getAllToStringJSON(AnimalRepository repo){
-        return new Gson().toJson(repo.getAll());
-    }
-
-    public String searchToStringJSON(List li){
+    public String toStringJSON(List li){
         return new Gson().toJson(li);
     }
+
 
     /*public HashMap JSONtoArray(String str) throws JsonProcessingException {
         return new ObjectMapper().readValue(str, HashMap.class);

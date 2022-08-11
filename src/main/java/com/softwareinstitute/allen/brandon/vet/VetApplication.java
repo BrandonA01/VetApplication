@@ -17,12 +17,12 @@ public class VetApplication {
 
 	@GetMapping("/customRoute")
 	public @ResponseBody String getAllAnimals() {
-		return animalList.getAllToStringJSON(animalList);
+		return animalList.toStringJSON(animalList.getAll());
 	}
 
 	@GetMapping("/search")
 	public @ResponseBody String getAnimalName(@RequestParam String name) {
-		return animalList.searchToStringJSON(animalList.searchAnimalByName(name));
+		return animalList.toStringJSON(animalList.searchAnimalByName(name));
 	}
 
 	@PutMapping("/add")
