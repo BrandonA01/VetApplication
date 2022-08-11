@@ -14,7 +14,7 @@
 	<name>vet</name>
 	<description>Spring Boot Vet Program</description>
 	<properties>
-		<java.version>18</java.version>
+		<java.version>17</java.version>
 		<sonar.organization>brandona01</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
@@ -45,5 +45,14 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
