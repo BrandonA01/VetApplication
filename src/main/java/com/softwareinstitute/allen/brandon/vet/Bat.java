@@ -2,7 +2,7 @@ package com.softwareinstitute.allen.brandon.vet;
 
 public final class Bat extends Mammal{
 
-    private int insects_eaten;
+    private int insectsEaten;
 
     public Bat(boolean alive, int age, String colour, int HP) {
         super(alive, age, colour, HP);
@@ -15,17 +15,17 @@ public final class Bat extends Mammal{
     }
 
     public String eat() {
-        insects_eaten++;
+        insectsEaten++;
         return "Eats insect";
     }
 
 
     public int getInsects_eaten() {
-        return insects_eaten;
+        return insectsEaten;
     }
 
-    public void setInsects_eaten(int insects_eaten) {
-        this.insects_eaten = insects_eaten;
+    public void setInsects_eaten(int insectsEaten) {
+        this.insectsEaten = insectsEaten;
     }
 
     public String takeOff() {

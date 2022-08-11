@@ -34,7 +34,7 @@ public abstract class Animal {
         this.alive = alive;
         this.colour = colour;
     }
-    public Animal(boolean alive, int age) {
+    protected Animal(boolean alive, int age) {
         this.alive = alive;
         this.age = age;
     }
@@ -69,16 +69,21 @@ public abstract class Animal {
     }
 
     public Animal breed(Animal partner){
-        Animal babyAnimal;
-        try {
-            Class[] cArg = new Class[2]; //Our constructor has 3 arguments
-            cArg[0] = boolean.class;
-            cArg[1] = int.class;
-            babyAnimal = this.getClass().getDeclaredConstructor(cArg).newInstance(true, 0);
-            return babyAnimal;
+        if(this.getClass().equals(partner.getClass())){
+            Animal babyAnimal;
+            try {
+                Class[] cArg = new Class[2]; //Our constructor has 3 arguments
+                cArg[0] = boolean.class;
+                cArg[1] = int.class;
+                babyAnimal = this.getClass().getDeclaredConstructor(cArg).newInstance(true, 0);
+                return babyAnimal;
+            }
+            catch(Exception e){
+                LOGGER.log(INFO,"Incompatible types of animals");
+                return null;
+            }
         }
-        catch(Exception e){
-            LOGGER.log(INFO,"Incompatible types of animals");
+        else{
             return null;
         }
     }
