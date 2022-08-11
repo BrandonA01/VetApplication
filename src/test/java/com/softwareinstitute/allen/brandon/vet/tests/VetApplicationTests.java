@@ -9,7 +9,7 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class VetApplicationTests {
 	@LocalServerPort
 	private int port;
