@@ -2,10 +2,13 @@ package com.softwareinstitute.allen.brandon.vet;
 
 public final class Bat extends Mammal{
 
+    private static final String TAKINGOFF = "Taking Off";
+    private static final String FLYING = "Flapping Continuously";
+    private static final String LANDED = "Landed";
     private int insectsEaten;
 
-    public Bat(boolean alive, int age, String colour, int HP) {
-        super(alive, age, colour, HP);
+    public Bat(boolean alive, int age, String colour, int hp) {
+        super(alive, age, colour, hp);
     }
     public Bat(boolean alive, int age, String colour) {
         super(alive, age, colour);
@@ -20,23 +23,23 @@ public final class Bat extends Mammal{
     }
 
 
-    public int getInsects_eaten() {
+    public int getInsectsEaten() {
         return insectsEaten;
     }
 
-    public void setInsects_eaten(int insectsEaten) {
+    public void setInsectsEaten(int insectsEaten) {
         this.insectsEaten = insectsEaten;
     }
 
     public String takeOff() {
-        return "Taking Off";
+        return TAKINGOFF;
     }
 
     public String flying() {
-        return "Flapping Continuously";
+        return FLYING;
     }
 
     public String land() {
-        return "Landed";
+        return LANDED;
     }
 }

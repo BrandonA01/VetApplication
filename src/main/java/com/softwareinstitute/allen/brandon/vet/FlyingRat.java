@@ -2,15 +2,10 @@ package com.softwareinstitute.allen.brandon.vet;
 
 public final class FlyingRat extends Bird implements Flying{
 
-    public int getPasties_eaten() {
-        return pasties_eaten;
-    }
-
-    public void setPasties_eaten(int pasties_eaten) {
-        this.pasties_eaten = pasties_eaten;
-    }
-
-    private int pasties_eaten;
+    private int pastiesEaten;
+    private static final String TAKINGOFF = "Flapping";
+    private static final String FLYING = "Gliding";
+    private static final String LANDED = "Landed";
 
     public FlyingRat(boolean alive, int age, String colour, int HP) {
         super(alive, age, colour, HP);
@@ -23,19 +18,26 @@ public final class FlyingRat extends Bird implements Flying{
     }
 
     public String eat() {
-        pasties_eaten++;
+        pastiesEaten++;
         return "Pecks at Greggs Pasty";
+    }
+    public int getPastiesEaten() {
+        return pastiesEaten;
+    }
+
+    public void setPastiesEaten(int pasties_eaten) {
+        this.pastiesEaten = pasties_eaten;
     }
 
     public String takeOff() {
-        return "Flapping";
+        return TAKINGOFF;
     }
 
     public String flying() {
-        return "Gliding";
+        return FLYING;
     }
 
     public String land() {
-        return "Landed";
+        return LANDED;
     }
 }

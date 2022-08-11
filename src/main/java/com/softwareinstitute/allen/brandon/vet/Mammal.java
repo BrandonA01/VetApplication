@@ -2,16 +2,16 @@ package com.softwareinstitute.allen.brandon.vet;
 
 public abstract class Mammal extends Animal{
 
-    public Mammal(boolean alive, int age, String colour, int HP) {
-        super(alive, age, colour, HP);
+    protected Mammal(boolean alive, int age, String colour, int hp) {
+        super(alive, age, colour, hp);
     }
-    public Mammal(boolean alive, int age, String colour) {
+    protected Mammal(boolean alive, int age, String colour) {
         super(alive, age, colour);
     }
-    public Mammal(boolean alive, String colour) {
+    protected Mammal(boolean alive, String colour) {
         super(alive, colour);
     }
-    public Mammal(boolean alive, int age) {
+    protected Mammal(boolean alive, int age) {
         super(alive, age);
     }
 

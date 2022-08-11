@@ -1,27 +1,29 @@
 package com.softwareinstitute.allen.brandon.vet;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class AnimalRepository {
 
-    private List<Animal> animalList = Collections.synchronizedList(new ArrayList<Animal>());
+    private List<Animal> animalList = new ArrayList<Animal>();
 
-    public Iterable<Animal> getAll() {
+    public List<Animal> getAll() {
         return animalList;
     }
 
-    public Animal add() {
+    public void add() {
         animalList.clear();
-        Animal animal = new Cat(true, 4, "Nala", "Black");
-        Animal animal1 = new Cat(true, 3, "Bruce", "Black and White");
-        Animal animal2 = new Cat(true, 2, "Tibbles", "Multicoloured");
-        Animal animal3 = new Cat(true, 1, "Tom", "Ginger");
-        this.animalList.add(animal);
-        this.animalList.add(animal1);
-        this.animalList.add(animal2);
-        this.animalList.add(animal3);
-        return animal;
+        this.animalList.add(new Cat(true, 4, "Nala", "Black"));
+        this.animalList.add(new Cat(true, 3, "Bruce", "Black and White"));
+        this.animalList.add(new Cat(true, 2, "Tibbles", "Multicoloured"));
+        this.animalList.add(new Cat(true, 1, "Tom", "Ginger"));
+    }
+
+    public String toString(AnimalRepository repo){
+        String json = new Gson().toJson(repo.getAll());
+        return json;
     }
 }

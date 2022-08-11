@@ -9,16 +9,14 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class VetApplication {
 
-	private static AnimalRepository repository = new AnimalRepository();
-
 	public static void main(String[] args) {
 		SpringApplication.run(VetApplication.class, args);
 	}
 
 	@GetMapping("/customRoute")
 	public @ResponseBody String getAllAnimals() {
+		AnimalRepository repository = new AnimalRepository();
 		repository.add();
-		String json = new Gson().toJson(repository.getAll());
-		return json;
+		return repository.toString(repository);
 	}
 }
