@@ -22,6 +22,6 @@ class VetApplicationTests {
 		AnimalRepository animals = new AnimalRepository();
 		animals.add();
 		assertThat(restTemplate.getForObject("http://localhost:" + port + "/customRoute",
-				String.class)).contains(animals.toStringJSON(animals));
+				String.class)).contains(animals.getAllToStringJSON(animals));
 	}
 }
