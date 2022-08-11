@@ -1,5 +1,7 @@
-package com.softwareinstitute.allen.brandon.vet;
+package com.softwareinstitute.allen.brandon.vet.tests;
 
+import com.softwareinstitute.allen.brandon.vet.AnimalRepository;
+import com.softwareinstitute.allen.brandon.vet.VetApplication;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
