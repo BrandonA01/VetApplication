@@ -1,20 +1,27 @@
 package com.softwareinstitute.allen.brandon.vet.tests;
 
 import com.softwareinstitute.allen.brandon.vet.AnimalRepository;
-import com.softwareinstitute.allen.brandon.vet.VetApplication;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.boot.test.web.server.LocalServerPort;
 
-@SpringBootTest
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 class VetApplicationTests {
+	@LocalServerPort
+	private int port;
+
+	@Autowired
+	private TestRestTemplate restTemplate;
 
 	@Test
-	void contextLoads() {
+	void checkHTTPResponse() {
 		AnimalRepository animals = new AnimalRepository();
-		VetApplication app = new VetApplication();
 		animals.add();
-		Assertions.assertEquals(app.getAllAnimals(), "Not the same", animals.toString(animals));
+		assertThat(restTemplate.getForObject("http://localhost:" + port + "/customRoute",
+				String.class)).contains(animals.toString(animals));
 	}
-
 }
