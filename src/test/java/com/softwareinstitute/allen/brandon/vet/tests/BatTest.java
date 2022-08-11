@@ -10,9 +10,9 @@ public class BatTest {
     public void test_bat_eats(){
         Bat testBat = new Bat(true, 4, "Black");
         testBat.eat();
-        assertEquals(1, testBat.getInsects_eaten(), "Bat doesn't eat.");
-        testBat.setInsects_eaten(500);
-        assertEquals(500, testBat.getInsects_eaten(), "Not the same amount of insects");
+        assertEquals(1, testBat.getInsectsEaten(), "Bat doesn't eat.");
+        testBat.setInsectsEaten(500);
+        assertEquals(500, testBat.getInsectsEaten(), "Not the same amount of insects");
     }
     @Test
     public void test_bat_flying(){
