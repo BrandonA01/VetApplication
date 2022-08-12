@@ -2,22 +2,44 @@ package com.softwareinstitute.allen.brandon.vet;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.logging.Logger;
 
 @SpringBootApplication
 @RestController
 public class VetApplication {
 
 	static AnimalRepository animalList = new AnimalRepository();
+	static String zooURL = "http://localhost:1235";
 
 	public static void main(String[] args) {
 		animalList.add();
 		SpringApplication.run(VetApplication.class, args);
+		getAllAnimals();
 	}
 
 	@GetMapping("/customRoute")
-	public @ResponseBody String getAllAnimals() {
-		return animalList.toStringJSON(animalList.getAll());
+	public static @ResponseBody String getAllAnimals() {
+		zooURL += "/allAnimals";
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<String> response = null;
+		try{
+			response=restTemplate.exchange(zooURL, HttpMethod.GET, getHeaders(), String.class);
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		System.out.println(response.getBody());
+		return response.getBody().toString();
+	}
+
+	private static HttpEntity<?> getHeaders() {
+		HttpHeaders headers = new HttpHeaders();
+		headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
+		return new HttpEntity<>(headers);
 	}
 
 	@GetMapping("/test")

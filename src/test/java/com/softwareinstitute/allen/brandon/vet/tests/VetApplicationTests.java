@@ -1,6 +1,5 @@
 package com.softwareinstitute.allen.brandon.vet.tests;
 
-import com.softwareinstitute.allen.brandon.vet.AnimalRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
