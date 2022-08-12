@@ -20,6 +20,11 @@ public class VetApplication {
 		return animalList.toStringJSON(animalList.getAll());
 	}
 
+	@GetMapping("/test")
+	public @ResponseBody String testHttpResponse() {
+		return "New Test";
+	}
+
 	@GetMapping("/search")
 	public @ResponseBody String getAnimalName(@RequestParam String name) {
 		return animalList.toStringJSON(animalList.searchAnimalByName(name));

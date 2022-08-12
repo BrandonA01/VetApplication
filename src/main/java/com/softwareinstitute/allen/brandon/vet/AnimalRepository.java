@@ -25,6 +25,7 @@ public class AnimalRepository {
     }
 
     public List<Cat> searchAnimalByName(String name){
+        searchanimalList.clear();
         for(int i = 0; i<animalList.size(); i++){
             if(animalList.get(i).getName().equals(name)){
                 searchanimalList.add(animalList.get(i));
@@ -36,7 +37,6 @@ public class AnimalRepository {
     public String toStringJSON(List li){
         return new Gson().toJson(li);
     }
-
 
     /*public HashMap JSONtoArray(String str) throws JsonProcessingException {
         return new ObjectMapper().readValue(str, HashMap.class);
